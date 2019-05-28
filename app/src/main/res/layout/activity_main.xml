@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--Header-->
+
         <RelativeLayout
             android:layout_marginTop="32dp"
             android:layout_marginRight="20dp"
@@ -32,13 +31,15 @@
                 android:layout_width="62dp"
                 android:layout_height="62dp" />
         </RelativeLayout>
-        <!--The Grid with icons-->
+
+
         <GridLayout
             android:columnCount="2"
             android:rowCount="2"
             android:alignmentMode="alignBounds"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
 
             <LinearLayout
                 android:layout_width="200dp"
@@ -59,6 +60,7 @@
                     android:layout_marginTop="12dp" />
             </LinearLayout>
 
+
             <LinearLayout
                 android:id="@+id/kcal_button"
                 android:layout_width="200dp"
@@ -66,12 +68,10 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="0dp">
-
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/bookmark" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -122,7 +122,6 @@
                     android:textColor="#6f6f6f"
                     android:layout_marginTop="12dp"/>
             </LinearLayout>
-
         </GridLayout>
     </LinearLayout>
 </ScrollView>

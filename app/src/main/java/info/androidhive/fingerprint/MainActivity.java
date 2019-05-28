@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         configureKcalButton();
         configureGoalButton();
-       /* configureMealButton();*/
+        configureMealButton();
     }
 
     private void configureKcalButton(){
@@ -36,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-  /*  private void configureMealButton(){
+    private void configureMealButton(){
         LinearLayout meal_button = (LinearLayout) findViewById(R.id.meals);
         meal_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, meals_generator.class));
+                startActivity(new Intent(MainActivity.this, Meals_generator.class));
             }
         });
-    }*/
+    }
     }
 

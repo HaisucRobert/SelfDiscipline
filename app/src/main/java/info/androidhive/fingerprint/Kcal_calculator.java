@@ -3,10 +3,7 @@ package info.androidhive.fingerprint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,9 +15,6 @@ public class Kcal_calculator extends AppCompatActivity {
     public double activity_value = 0;
     public double caloriifinale =0;
     public String finalcalories;
-
-    Spinner gender_spinner;
-    Spinner activitiess_spinner;
 
 
     @Override
@@ -41,10 +35,6 @@ public class Kcal_calculator extends AppCompatActivity {
                 R.array.activitiess_array, android.R.layout.simple_spinner_item);
         adapter_act.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_act.setAdapter(adapter_act);
-
-
-
-
 
 
 
@@ -101,8 +91,6 @@ public class Kcal_calculator extends AppCompatActivity {
         }*/
 
 
-
-
         if (spn.getSelectedItem().toString().equals("Male")){
             if (spn_act.getSelectedItem().toString().equals("Sedentary lifestyle")) {
                 activity_value=1.2;
@@ -125,8 +113,6 @@ public class Kcal_calculator extends AppCompatActivity {
             TextView textView =(TextView) findViewById(R.id.text_calculate);
             textView.setText("The nr of necesesary calories is " + finalcalories + " kcalories to mentain your weight");
 
-            /*TextView textView_goals =(TextView) findViewById(R.id.txtcalorii_mentinere);
-            textView_goals.setText("Your curent necesesarry of calories is " + finalcalories);*/
 
         }
         else if (spn.getSelectedItem().toString().equals("Female")){
@@ -151,13 +137,10 @@ public class Kcal_calculator extends AppCompatActivity {
             TextView textView =(TextView) findViewById(R.id.text_calculate);
             textView.setText("The nr of necesesary calories is " + finalcalories + " kcalories");
 
-            /*TextView textView_goals =(TextView) findViewById(R.id.txtcalorii_mentinere);
-            textView_goals.setText("Your curent necesesarry of calories is " + finalcalories);*/
         }
 
         SharedPreferences.Editor edit = getSharedPreferences("robert", Context.MODE_PRIVATE).edit();
         edit.putString("finalcalories",finalcalories);
-        edit.putInt("sdfgh",5);
         edit.apply();
 
     }

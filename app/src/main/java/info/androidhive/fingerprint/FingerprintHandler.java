@@ -28,20 +28,24 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
         manager.authenticate(cryptoObject, cancellationSignal, 0, this, null);
     }
 
+
     @Override
     public void onAuthenticationError(int errMsgId, CharSequence errString) {
         this.update("Fingerprint Authentication error\n" + errString);
     }
+
 
     @Override
     public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
         this.update("Fingerprint Authentication help\n" + helpString);
     }
 
+
     @Override
     public void onAuthenticationFailed() {
         this.update("Fingerprint Authentication failed.");
     }
+
 
     @Override
     public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
@@ -49,6 +53,7 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
     }
+
 
     private void update(String e){
         TextView textView = (TextView) ((Activity)context).findViewById(R.id.errorText);

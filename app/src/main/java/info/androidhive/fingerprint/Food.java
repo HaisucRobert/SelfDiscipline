@@ -65,4 +65,7 @@ public class Food {
                 ", GLUCIDE=" + GLUCIDE +
                 '}';
     }
+
+
+
 }

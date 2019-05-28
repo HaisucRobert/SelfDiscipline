@@ -43,7 +43,7 @@ public class FingerprintActivity extends AppCompatActivity {
 
         DataBaseHelper current = new DataBaseHelper(getApplicationContext());
         current.insertDummy();
-        Log.i("EMY_", "All Data is: "+current.getAllData().toString());
+
 
         // Initializing both Android Keyguard Manager and Fingerprint Manager
         KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
@@ -116,6 +116,7 @@ public class FingerprintActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     }
+
 
     @TargetApi(Build.VERSION_CODES.M)
     public boolean cipherInit() {

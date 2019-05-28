@@ -25,14 +25,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public DataBaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 4);
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " +TABLE_NAME);
         onCreate(db);
-
     }
 
 
@@ -41,6 +39,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase writableDatabase = this.getWritableDatabase();
         writableDatabase.execSQL("create table " + TABLE_NAME + " (FOOD_ID INTEGER PRIMARY KEY ,NAME TEXT,KCALORII INTEGER,PROTEINE DOUBLE,LIPIDE DOUBLE,GLUCIDE DOUBLE)");
     }
+
 
     public void insertDummy() {
         SQLiteDatabase writableDatabase = this.getWritableDatabase();
@@ -222,11 +221,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         writableDatabase.execSQL("INSERT INTO food (food_id, name, kcalorii, proteine, lipide, glucide) VALUES (null ,\"Vin Mediu\" ,53 ,0 ,7.5 ,0.1);");
         writableDatabase.execSQL("INSERT INTO food (food_id, name, kcalorii, proteine, lipide, glucide) VALUES (null ,\"Whisky\" ,301 ,0 ,42.2 ,0);");
 
-
-
-
-
     }
+
 
     public List<Food> getAllData() {
         //this.getReadableDatabase().query(TABLE_NAME, allColumns, COL_1+ ":= ?",new String[]{"1"},null,null,null)
