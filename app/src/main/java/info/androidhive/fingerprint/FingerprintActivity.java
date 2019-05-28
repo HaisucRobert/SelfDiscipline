@@ -12,6 +12,7 @@ import android.security.keystore.KeyProperties;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;
@@ -40,11 +41,17 @@ public class FingerprintActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fingerprint);
 
+        DataBaseHelper current = new DataBaseHelper(getApplicationContext());
+        current.insertDummy();
+        Log.i("EMY_", "All Data is: "+current.getAllData().toString());
+
         // Initializing both Android Keyguard Manager and Fingerprint Manager
         KeyguardManager keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
         FingerprintManager fingerprintManager = (FingerprintManager) getSystemService(FINGERPRINT_SERVICE);
 
         textView = (TextView) findViewById(R.id.errorText);
+
+
 
         // Check whether the device has a Fingerprint sensor.
         if(!fingerprintManager.isHardwareDetected()){
