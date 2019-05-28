@@ -70,6 +70,12 @@ public class Goals extends AppCompatActivity {
 
     }
     // In this method will be calculate nr of kcalories in depend of goal
+
+    // take  finalcalories and if the customer chose  lose weigh  - and  if he choose gain muscle +
+    // if he chose in 2nd spinner hard   finalcalories + 0.2 * finalcalories
+    // same with light but for light is 0.1 and fianlcalories - 0.1 * finalcalories
+
+
     public void recalculate_kcal(){
         double hard = 0.2;
         double light = 0.1;
